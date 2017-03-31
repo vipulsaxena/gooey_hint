@@ -1,24 +1,165 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="0" width="0">
-  <defs>
-    <filter id="gooey">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="gooey" />
-      <feComposite in="SourceGraphic" in2="gooey" operator="atop"/>
-    </filter>
-  </defs>
-</svg>
-<p>
-  <b>How I Met Your Mother</b> is an American
-  <span class="hint-wrapper">
-   sitcom
-    <input type="checkbox" id="hint" >
-    <label for="hint" class="gooey" >
-      <small>
-        <span>
-          Genre of comedy centered on characters who share a common           environment
-        </span>
-  </small>
-  </label>
-  </span>
-  that originally aired on CBS from September 19, 2005, to March 31, 2014.
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Gooey Experiment
+  </title>
+  <style type="text/css">
+    @import url("link href='https://fonts.googleapis.com/css?family=Inconsolata");
+  
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: Inconsolata, monospace;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.75);
+  background: #243864;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+p {
+  max-width: 50rem;
+  line-height: 2.5;
+  text-align: center;
+  margin: 0 2rem;
+}
+input {
+   position: absolute;
+   left: -9999px;
+}
+.gooey {
+   -webkit-filter: url(#gooey);
+   filter: url(index.html#gooey);
+}
+.hint-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  border-radius: 2rem;
+  line-height: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+.hint-wrapper:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+label {
+  position: absolute;
+  right: -2rem;
+  top: 2.3rem;
+  width: 0;
+  height: 0;
+  display: block;
+  box-sizing: border-box;
+  line-height: 1rem;
+  -webkit-transition: width 0s linear, height 0s linear;
+  transition: width 0s linear, height 0s linear;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+label::before {
+  position: absolute;
+  top: -2.3rem;
+  right: 2.2rem;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1;
+  background-color: #167aae;
+  border-radius: 50%;
+  box-sizing: border-box;
+  content:"?";
+  z-index: 9999;
+  cursor: pointer;
+}
+small {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 15rem;
+  padding: 0.5rem 1rem;
+  background-color: #167aae;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1rem;
+  box-sizing: border-box;
+  -webkit-transform: scale(0.01) translateY(-2.3rem);
+          transform: scale(0.01) translateY(-2.3rem);
+  -webkit-transform-origin: 80% 0;
+          transform-origin: 80% 0;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+small span {
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+input:checked + label {
+  width: 15rem;
+  height: 5rem;
+  -webkit-transition: width 0s linear, height 0s linear;
+  transition: width 0s linear, height 0s linear;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+input:checked + label small{
+ -webkit-transform: scale(1) translateY(0);
+         transform: scale(1) translateY(0);
+}
+input:checked + label span {
+ opacity: 1;
+ -webkit-transition: opacity 0.2s linear;
+ transition: opacity 0.2s linear;
+ -webkit-transition-delay: 0.2s;
+         transition-delay: 0.2s;
+}
+  </style>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" height="0" width="0">
+    <defs>
+      <filter id="gooey">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="gooey" />
+        <feComposite in="SourceGraphic" in2="gooey" operator="atop"/>
+      </filter>
+    </defs>
+  </svg>
+  <p>
+    <b>Lets Experiment </b> 
+    <span class="hint-wrapper">
+     gooey hints
+      <input type="checkbox" id="hint" >
+      <label for="hint" class="gooey" >
+        <small>
+          <span>
+            this is awesome
+          </span>
+    </small>
+    </label>
+    </span>
+    It's fun
+  </p>
+
+</body>
+</html>
