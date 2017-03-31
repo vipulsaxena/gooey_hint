@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="0" width="0">
+  <defs>
+    <filter id="gooey">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="gooey" />
+      <feComposite in="SourceGraphic" in2="gooey" operator="atop"/>
+    </filter>
+  </defs>
+</svg>
+<p>
+  <b>How I Met Your Mother</b> is an American
+  <span class="hint-wrapper">
+   sitcom
+    <input type="checkbox" id="hint" >
+    <label for="hint" class="gooey" >
+      <small>
+        <span>
+          Genre of comedy centered on characters who share a common           environment
+        </span>
+  </small>
+  </label>
+  </span>
+  that originally aired on CBS from September 19, 2005, to March 31, 2014.
+</p>
